@@ -27,6 +27,11 @@ img {
   text-align: center;
 }
 
+// Active navbar items should be underlined
+.nav-item.active {
+  text-decoration-line: underline;
+}
+
 // Left to right used to obfuscate the email
 .ltr-text {
   unicode-bidi: bidi-override;
