@@ -1,7 +1,6 @@
 ---
-title: Javacord
+title: Home
 layout: default
-category: home
 ---
 <div class="jumbotron home-jumbotron">
     <div class="container">
@@ -9,4 +8,33 @@ category: home
         <p class="lead">Javacord is an easy to use multithreaded library for creating Discord bots in Java.</p>
         <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
     </div>
+</div>
+
+<div class="container">
+    <h3>Get started quickly</h3>
+    <p>
+        Getting started with Javacord is extremely easy. Logging in, is a simple as this:
+    </p>
+{% highlight java %}
+public class MyFirstBot {
+
+    public static void main(String[] args) {
+        // Read the token from the first program parameter when invoking the bot
+        String token = args[0];
+
+        DiscordApi api = new DiscordApiBuilder().setToken(token).login().join();
+
+        // Add a listener which answers with "Pong!" if someone writes "!ping"
+        api.addMessageCreateListener(event -> {
+            if (event.getMessage().getContent().equalsIgnoreCase("!ping")) {
+                event.getChannel().sendMessage("Pong!");
+            }
+        });
+
+        // Print the invite url of your bot
+        System.out.println("You can invite the bot by using the following url: " + api.createBotInvite());
+    }
+
+}
+{% endhighlight %}
 </div>
