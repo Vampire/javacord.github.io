@@ -17,6 +17,22 @@ img {
   border-radius: 0;
 }
 
+.page-footer {
+  color: $white;
+  text-align: center;
+}
+
+.page-footer a {
+  color: $white;
+  text-align: center;
+}
+
+// Left to right used to obfuscate the email
+.ltr-text {
+  unicode-bidi: bidi-override;
+  direction: rtl
+}
+
 /**
  * CODE CLOCKS
  */
