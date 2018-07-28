@@ -31,7 +31,7 @@ The content of the article.
 * `headline`: The headline of the article, displayed as `<h1>`. If not set, the title is used.
 
 # How to create changelogs
-Wiki articles are located in the `_changelog` folder. They have the following structure:
+Changelogs are located in the `_changelog` folder. They have the following structure:
 ```
 ---
 title: "Version x.y.z"
