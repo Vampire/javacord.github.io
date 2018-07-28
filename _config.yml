@@ -1,0 +1,53 @@
+title: Javacord
+email: contact@javacord.org
+description: An easy to use multithreaded library for creating Discord bots in Java.
+baseurl: ""
+url: "https://javacord.org/"
+repository: "Javacord/Javacord-Website"
+
+# Build settings
+markdown: kramdown
+
+highlighter: rouge
+
+sass:
+  sass_dir: _sass
+
+defaults:
+  - scope:
+      path: _wiki
+      type: wiki
+    values:
+      layout: wiki
+      sectionid: wiki
+      category: wiki
+  - scope:
+      path: _changelog
+      type: changelog
+    values:
+      layout: changelog
+      sectionid: changelog
+      category: changelog
+
+collections:
+  wiki:
+    permalink: /:collection/:path/
+    output: true
+    values:
+      layout: wiki
+  changelog:
+    permalink: /:collection/:path/
+    output: true
+    values:
+      layout: changelog
+
+# Exclude from processing.
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - .idea/
+  - .gitignore
+  - README.md
+  - LICENSE
+
+
