@@ -1,6 +1,12 @@
 ---
 title: Working with Futures
 position: 4
+keywords:
+- CompletableFuture
+- exceptionally
+- ExceptionLogger
+- join
+- thenAcceptAsync
 ---
 
 > This tutorials assumes, you are familiar with lambda expressions. Take a look at the [Lambda Introduction](/wiki/essential-knowledge/lambda-introduction) first, if you are not!

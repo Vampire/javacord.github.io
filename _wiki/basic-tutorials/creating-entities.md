@@ -1,6 +1,19 @@
 ---
 title: Creating Channels, Invites, etc.
 position: 1
+keywords:
+- builder
+- creating entities
+- create entities
+- entity creation
+- create channels
+- channel creation
+- create webhooks
+- webhook creation
+- create invites
+- invite creation
+- create server
+- server creation
 ---
 
 Javacord provides `XyzBuilder` classes to create new Discord entities like channels, webhooks, servers, etc.

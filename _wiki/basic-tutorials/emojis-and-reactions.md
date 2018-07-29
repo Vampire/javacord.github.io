@@ -1,6 +1,16 @@
 ---
 title: Emojis and Reactions
 position: 2
+keywords:
+- create emoji
+- emoji creation
+- unicode emoji
+- custom emojis
+- delete emojis
+- emoji deletion
+- send emoji
+- use emoji
+- KnownCustomEmoji
 ---
 
 There are two different kinds of emojis in Discord:

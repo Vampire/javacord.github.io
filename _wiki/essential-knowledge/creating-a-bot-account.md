@@ -1,6 +1,11 @@
 ---
 title: Creating a Bot Account
 position: 1
+keywords:
+- bot creation
+- get token
+- add bot
+- bot invite link
 ---
 
 ## How to create a bot and get its token

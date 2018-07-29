@@ -1,6 +1,8 @@
 ---
 title: Lambda Introduction
 position: 2
+keywords:
+- lambdas
 ---
 
 As Javacord heavily benefits from [lambda expressions](https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html), this introduction gives you a quick overview, if you are not familiar with lambdas. Lambdas are used as a short form of [functional interface](https://docs.oracle.com/javase/8/docs/api/java/lang/FunctionalInterface.html) implementations.

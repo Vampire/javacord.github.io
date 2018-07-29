@@ -1,6 +1,18 @@
 ---
 title: Embed FAQ
 position: 1
+keywords:
+- EmbedBuilder
+- inline field
+- setTitle
+- setDescription
+- setAuthor
+- addField
+- addInlineField
+- setColor
+- setFooter
+- setImage
+- setThumbnail
 ---
 
 ## What is an embed?

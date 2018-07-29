@@ -24,6 +24,9 @@ A wiki article has the following structure:
 title: "Article title"
 headline: "Article headline"
 position: 3
+keywords:
+- keyword1
+- keyword2
 ---
 
 The content of the article.
@@ -31,6 +34,7 @@ The content of the article.
 * `title`: The title of the article, which will be used for the `<title>` html tag and the side navigation
 * `headline`: The headline of the article, displayed as `<h1>`. If not set, the title is used.
 * `position`: The position of the article in its category. Starting with `1`.
+* `keywords`: A list with keywords used for search. Don't repeat the title or headline here.
 
 # How to create changelogs
 Changelogs are located in the `_changelog` folder. They have the following structure:

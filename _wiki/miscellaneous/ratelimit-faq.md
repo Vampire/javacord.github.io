@@ -1,6 +1,8 @@
 ---
 title: Ratelimit FAQ
 position: 2
+keywords:
+- ratelimits
 ---
 
 ## What are ratelimits?

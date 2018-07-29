@@ -1,6 +1,10 @@
 ---
 title: Using the MessageBuilder
 position: 5
+keywords:
+- create messages
+- message creation
+- sendMessage
 ---
 
 ## Introduction

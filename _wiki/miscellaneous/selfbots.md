@@ -1,6 +1,8 @@
 ---
 title: Client Account Bots (Selfbots)
 position: 3
+keywords:
+- Good way to get banned
 ---
 
 Javacord supports logging in with "real" accounts instead of the normal bot accounts (sometimes also called "selfbots"). However, there are some risks involved with client accounts.

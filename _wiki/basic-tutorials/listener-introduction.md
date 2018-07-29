@@ -1,6 +1,12 @@
 ---
 title: Listener Introduction
 position: 3
+keywords:
+- creating listeners
+- listener creation
+- LstenerManager
+- removeListener
+- remove listener
 ---
 # Creating listeners
 

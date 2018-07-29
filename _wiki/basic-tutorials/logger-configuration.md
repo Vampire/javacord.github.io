@@ -1,6 +1,10 @@
 ---
 title: Logger configuration
 position: 4
+keywords:
+- log4j2
+- sdcf4j
+- logback
 ---
 
 Logging is an important tool to keep track of what's going on in your application. Javacord uses the [slf4j](https://www.slf4j.org), which allows you to use your favorite logging framework. In case you don't add your own logging framework, a fallback logger is used.

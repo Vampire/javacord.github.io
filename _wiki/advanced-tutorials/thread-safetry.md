@@ -1,6 +1,10 @@
 ---
 title: Thread Safety
 position: 4
+keywords:
+- multithreading
+- thread safe
+- concurrent
 ---
 
 As Javacord is heavily multithreaded, you should know how to write thread-safe applications. I recommend the following online tutorial if you are not familiar with multithreading yet: [Java Concurrency / Multithreading Tutorial](http://tutorials.jenkov.com/java-concurrency/index.html). The goal of this wiki article is not to teach you how to write thread-safe code in general, but to tell you everything Javacord-specific you need to know in order to do so.

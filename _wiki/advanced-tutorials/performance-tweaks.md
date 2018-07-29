@@ -1,6 +1,12 @@
 ---
 title: Performance Tweaks
 position: 2
+keywords:
+- performance
+- tweaks
+- startup wait
+- message cache
+- tuning
 ---
 
 Here are some tricks/settings to increase the performance of your bot:

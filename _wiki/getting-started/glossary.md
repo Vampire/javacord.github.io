@@ -1,6 +1,18 @@
 ---
 title: Glossary
 position: 4
+keywords:
+- Guild
+- Selfbot
+- Sharding
+- Token
+- Embed
+- Ratelimit
+- Websocket
+- Gateway
+- Rest Request
+- Activity
+- Rich Presence
 ---
 This is a list with the most common Discord-related terms:
 * **`Guild`** - A synonym for `server`
