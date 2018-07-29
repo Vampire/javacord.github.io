@@ -2,7 +2,7 @@
 title: Welcome
 position: 1
 ---
-![](http://bastian-oppermann.de/javacord3_banner.png)
+![](/img/javacord3_banner.png)
 
 ## Introduction
 
