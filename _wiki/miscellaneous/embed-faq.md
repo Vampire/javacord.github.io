@@ -51,5 +51,8 @@ Normal fields always start in a new line, whereas several inline fields can be i
 | Field Value  | 1024 characters |
 | Footer Text  | 2048 characters |
 | Author Name  | 256 characters  |
+{:.table}
+{:.table-striped}
+{:.table-bordered}
 
 In addition to the limits above, the sum of all characters in an embed structure must not exceed 6000 characters.

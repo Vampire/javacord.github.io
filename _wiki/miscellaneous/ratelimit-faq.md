@@ -18,6 +18,9 @@ Ratelimits is a Discord restriction which prevents you from performing actions i
 | Edit Member Nickname | 1 / 1s    | per server  |
 | Edit Bot Username    | 2 / 1h    | per account |
 | All Actions Combined | 50 / 1s   | per account |
+{:.table}
+{:.table-striped}
+{:.table-bordered}
 
 ## How do I deal with ratelimits?
 
