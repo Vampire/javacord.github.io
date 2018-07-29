@@ -89,13 +89,13 @@ String currentGame = api.getCachedUserById(123)
 <details>
   <summary>"Solution"</summary>
 
-```java
+{% highlight java %}
 String currentGame = api.getUserById(123) // Gets an Optional<User>
         .map(User::getGame) // "Converts"/Maps the user to a Optional<Game>. The value is now Optional<Optional<Game>>
         .filter(Optional::isPresent) // Checks if the game exists
         .map(Optional::get) // "Converts"/Maps the Optional<Optional<Game>> to Optional<Game>
         .map(Game::getName) // "Converts"/Maps the game to the name of the game
         .orElse("None"); // If the user does not exist or doesn't play a game, currentGame is "None"
-```
+{% endhighlight %}
 
 </details>

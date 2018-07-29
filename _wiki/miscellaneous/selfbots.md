@@ -43,3 +43,4 @@ DiscordApi api = new DiscordApiBuilder()
     .setToken("your token")
     .login().join();
 System.out.println("Logged in!");
+```
