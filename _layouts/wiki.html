@@ -16,11 +16,12 @@ layout: default
                 {% for category in site.data.wiki-categories %}
                     <h4>{{ category.title }}</h4>
                     <div class="list-group">
-                    {% for item in site.wiki %}
-                        {% if item.path contains category.folder %}
-                            <a href="{{ item.url }}" class="list-group-item list-group-item-action {%if page.url == item.url %}active{% endif %}">{{ item.title }}</a>
-                        {% endif %}
-                    {% endfor %}
+                        {% assign sorted_articles = site.wiki | sort:"position" %}
+                        {% for item in sorted_articles %}
+                            {% if item.path contains category.folder %}
+                                <a href="{{ item.url }}" class="list-group-item list-group-item-action {%if page.url == item.url %}active{% endif %}">{{ item.title }}</a>
+                            {% endif %}
+                        {% endfor %}
                     </div>
                     <br>
                 {% endfor %}

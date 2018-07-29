@@ -1,0 +1,106 @@
+---
+title: Setup Eclipse + Maven
+position: 3
+---
+## Setup
+
+**1.** Start Eclipse
+
+**2.** Create a new project (`File` -> `New` -> `Project`)
+>![](https://i.imgur.com/hYeYxen.png)
+
+**3.** Select `Maven Project`
+
+**4.** Click `Next`
+
+>![](https://i.imgur.com/CeHy9HK.png)
+
+**5.** Check `Create a simple project`
+
+**6.** Click `Next`
+
+>![](https://i.imgur.com/xxbGmr6.png)
+
+**7.** Enter a group id (e.g. `com.github.yourname`)
+
+**8.** Enter an artifact id (e.g. `myfirstbot`)
+
+**9.** Click `Finish`
+
+>![](https://i.imgur.com/JSV9yrl.png)
+
+**10.** Double click on the `pom.xml` file
+
+>![](https://i.imgur.com/NCAALIt.png)
+
+**11.** Select `pom.xml`
+
+>![](https://i.imgur.com/kbdtiLJ.png)
+
+**12.** Now you have to add Javacord as a dependency by editing the pom.xml file. Your file should now look like this:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>your.package.name</groupId>
+    <artifactId>myfirstbot</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <repositories>
+        <repository>
+            <id>Sonatype Snapshots</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.javacord</groupId>
+            <artifactId>javacord</artifactId>
+            <version>3.0.0-SNAPSHOT</version>
+            <type>pom</type>
+        </dependency>
+    </dependencies>
+
+</project>
+```
+
+**13.** Create a new package inside the `src/main/java` folder
+
+>![](https://i.imgur.com/Z1QNuQf.png)
+>![](https://i.imgur.com/RKJc0yU.png)
+
+**14.** Create a new class inside this package
+
+>![](https://i.imgur.com/eUmumlz.png)
+>![](https://i.imgur.com/GsPFaag.png)
+
+**15.**  Save the project (you should do this from time to time)
+
+>[](https://i.imgur.com/Ht5UT8S.png)
+
+**16.** Now you can start coding! Example code:
+```java
+package com.github.yourname.myfirstbot;
+
+import org.javacord.api.DiscordApi;
+import org.javacord.api.DiscordApiBuilder;
+
+public class Main {
+
+    public static void main(String[] args) {
+        DiscordApi api = new DiscordApiBuilder().setToken("your token").login().join();
+        System.out.println("Logged in!");
+    }
+
+}
+```
+
+## Run the code
+
+You can run your code by clicking on the small green arrow
+>![](https://i.imgur.com/rsIHH9M.png)
