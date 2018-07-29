@@ -30,6 +30,12 @@ layout: default
         <div class="col-lg-9 order-lg-first">
             <h1 class="wiki-headline">{% if page.headline %}{{ page.headline }}{% else %}{{ page.title }}{% endif %}</h1>
             {{ content }}
+            <p class="text-center">
+                <br>
+                <a class="btn btn-primary" target="_blank" href="https://github.com/Javacord/javacord.github.io/blob/master/{{ page.path }}" role="button">
+                    <i class="fas fa-pencil-alt" style="margin-right: 10px"></i>Improve this page
+                </a>
+            </p>
         </div>
     </div>
 </div>
