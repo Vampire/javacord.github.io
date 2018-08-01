@@ -70,7 +70,7 @@ RegExp.escape = function(str) {
 // Highlights the given word
 function highlightWordsNoCase(line, word) {
     var regex = new RegExp("(" + RegExp.escape(word) + ")", "gi");
-    return line.replace(regex, "<b>$1</b>");
+    return line.replace(regex, "<strong>$1</strong>");
 }
 
 // Add some event listeners to update the suggestions
