@@ -17,10 +17,10 @@
                 </li>
 
                 <li class="nav-item dropdown {% if page.category == "changelog" %}active{% endif %}">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" id="changelog-dropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Changelog
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <div class="dropdown-menu" aria-labelledby="changelog-dropdown">
                         {% assign changelogs = site.changelog | sort: 'version' | reverse %}
                         {% for changelog in changelogs limit:1 %}
                             <a class="dropdown-item" href="{{ changelog.url }}">{{ changelog.version }} (latest)</a>
