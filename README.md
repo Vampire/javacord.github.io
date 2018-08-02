@@ -8,7 +8,7 @@ In this case you are wrong here. Just head over to the [Javacord repository](htt
 Make sure you have [RubyGems](https://rubygems.org/) installed.
 ```
 gem install bundler jekyll
-git clone https://github.com/Javacord/javacord.github.io
+git clone https://github.com/Javacord/javacord.github.io.git
 cd javacord.github.io
 bundle exec jekyll serve
 ```
