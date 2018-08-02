@@ -92,12 +92,16 @@ function searchJavadocMethods(search) {
     let searchResults = [];
     let counter = 0;
     for (let i = 0; i < memberSearchIndex.length; i++) {
-        let package = memberSearchIndex[i].p;
+        let packageName = memberSearchIndex[i].p;
         let className = memberSearchIndex[i].c;
         let methodName = memberSearchIndex[i].l;
         let url = memberSearchIndex[i].url;
         let fullName = className + '#' + methodName;
-        url = javadocBaseUrl + package.replace(/\./g, '/') + '/' + className + '.html#' + (url === undefined ? methodName.replace('(', '-').replace(')', '-') : url);
+        // Skip internal methods
+        if (packageName.indexOf('.internal') !== -1) {
+            continue;
+        }
+        url = javadocBaseUrl + packageName.replace(/\./g, '/') + '/' + className + '.html#' + (url === undefined ? methodName.replace('(', '-').replace(')', '-') : url);
         if (fullName.toLowerCase().indexOf(search.toLowerCase()) !== -1) {
             let autocompleteElement = document.createElement('div');
             autocompleteElement.innerHTML = '<a class="dropdown-item" href="' + url + '" onclick="location.href = \'' + url + '\'">' + highlightWordsNoCase(fullName, searchBox.value) + '</a>';
