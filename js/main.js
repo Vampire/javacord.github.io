@@ -1,19 +1,26 @@
 // TODO get base url dynamically
-let javadocBaseUrl = 'https://docs.javacord.org/api/build/4655/';
+let javadocBaseUrl = 'https://docs.javacord.org/api/build/';
+let memberSearchIndex = [];
+
+// Get the latest version
+$.get('https://docs.javacord.org/rest/latest-version/build', function (data) {
+    javadocBaseUrl += data.build_id + '/';
+
+    // Get JavaDoc methods
+    $.getScript(javadocBaseUrl + 'member-search-index.js', function () {
+        // Sort by length
+        memberSearchIndex.sort(function(a, b) {
+            return (a.c + '#' + a.l).length - (b.c + '#' + b.l).length;
+        });
+    });
+
+}, 'json');
 
 // Get the wiki data
 let wikiJson = [];
 $.get('/api/wiki.json', function (data) {
     wikiJson = data;
 }, 'json');
-
-// Get JavaDoc methods
-$.getScript(javadocBaseUrl + 'member-search-index.js', function () {
-    // Search by length
-    memberSearchIndex.sort(function(a, b) {
-        return (a.c + '#' + a.l).length - (b.c + '#' + b.l).length;
-    });
-});
 
 let searchBox = document.getElementById('search-box');
 let lastSearchTerm = null;
