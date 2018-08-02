@@ -43,22 +43,34 @@ function displaySuggestions() {
     searchBox.parentElement.appendChild(autocompleteList);
 
     // Fill dropdown menu
+    let searchResults = searchWikiArticles(searchBox.value);
     autocompleteList.innerHTML += '<div class="dropdown-header"><b>Wiki-Articles</b></div>';
+    if (searchResults.length <= 0) {
+        autocompleteList.innerHTML += '<div class="dropdown-header">No results</div>';
+    }
+    for (let i = 0; i < searchResults.length; i++) {
+        autocompleteList.appendChild(searchResults[i]);
+    }
+
+    $('#autocomplete-list').dropdown('toggle');
+}
+
+// Search for wiki articles and return an array with html elements
+function searchWikiArticles(search) {
+    let searchResults = [];
     let counter = 0;
     for (let i = 0; i < wikiJson.length; i++) {
-        console.log(searchBox.value);
-        if (wikiJson[i].title.toLowerCase().indexOf(searchBox.value.toLowerCase()) !== -1) {
+        if (wikiJson[i].title.toLowerCase().indexOf(search.toLowerCase()) !== -1) {
             let autocompleteElement = document.createElement("div");
             autocompleteElement.innerHTML = '<a class="dropdown-item" href="' + wikiJson[i].url + '" onclick="location.href = \'' + wikiJson[i].url + '\'">' + highlightWordsNoCase(wikiJson[i].title, searchBox.value) + '</a>';
-            autocompleteList.appendChild(autocompleteElement);
+            searchResults.push(autocompleteElement);
             counter++;
         }
         if (counter >= 5) {
             break;
         }
     }
-
-    $('#autocomplete-list').dropdown('toggle');
+    return searchResults;
 }
 
 // Escapes special characters
