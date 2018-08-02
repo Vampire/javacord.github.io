@@ -8,7 +8,12 @@ $.get('/api/wiki.json', function (data) {
 }, 'json');
 
 // Get JavaDoc methods
-$.getScript(javadocBaseUrl + 'member-search-index.js');
+$.getScript(javadocBaseUrl + 'member-search-index.js', function () {
+    // Search by length
+    memberSearchIndex.sort(function(a, b) {
+        return (a.c + '#' + a.l).length - (b.c + '#' + b.l).length;
+    });
+});
 
 let searchBox = document.getElementById('search-box');
 let lastSearchTerm = null;
