@@ -54,7 +54,7 @@ message.addReactionAddListener(event -> {
     }
 }).removeAfter(30, TimeUnit.MINUTES);
 ```
-> Seems like the bot is very sensible to criticism.
+> Seems like the bot is very sensitive to criticism.
 
 # Removing listeners
 
