@@ -43,6 +43,8 @@ img {
 
 .dropdown-header strong {
   color: $gray-900;
+  text-decoration-line: underline;
+  font-size: 120%;
 }
 
 /**
@@ -64,6 +66,7 @@ img {
   position: relative;
   border-bottom: 1.5px solid $primary;
 }
+
 h2 {
   border-bottom: 0.5px solid $gray-400;
 }

@@ -1,6 +1,7 @@
 // TODO get base url dynamically
 let javadocBaseUrl = 'https://docs.javacord.org/api/build/';
 let memberSearchIndex = [];
+let typeSearchIndex = [];
 
 // Get the latest version
 $.get('https://docs.javacord.org/rest/latest-version/build', function (data) {
@@ -11,6 +12,14 @@ $.get('https://docs.javacord.org/rest/latest-version/build', function (data) {
         // Sort by length
         memberSearchIndex.sort(function(a, b) {
             return (a.c + '#' + a.l).length - (b.c + '#' + b.l).length;
+        });
+    });
+
+    // Get JavaDoc classes
+    $.getScript(javadocBaseUrl + 'type-search-index.js', function () {
+        // Sort by length
+        typeSearchIndex.sort(function(a, b) {
+            return a.l.length - b.l.length;
         });
     });
 
@@ -78,6 +87,15 @@ function displaySuggestions() {
         autocompleteList.appendChild(searchResults[i]);
     }
 
+    searchResults = searchJavadocClasses(searchBox.value);
+    autocompleteList.innerHTML += '<div class="dropdown-header"><strong>Classes</strong></div>';
+    if (searchResults.length <= 0) {
+        autocompleteList.innerHTML += '<div class="dropdown-header">No results</div>';
+    }
+    for (let i = 0; i < searchResults.length; i++) {
+        autocompleteList.appendChild(searchResults[i]);
+    }
+
     $('#autocomplete-list').dropdown('toggle');
 }
 
@@ -117,6 +135,31 @@ function searchJavadocMethods(search) {
         if (fullName.toLowerCase().indexOf(search.toLowerCase()) !== -1) {
             let autocompleteElement = document.createElement('div');
             autocompleteElement.innerHTML = '<a class="dropdown-item" href="' + url + '" onclick="location.href = \'' + url + '\'">' + highlightWordsNoCase(fullName, searchBox.value) + '</a>';
+            searchResults.push(autocompleteElement);
+            counter++;
+        }
+        if (counter >= 5) {
+            break;
+        }
+    }
+    return searchResults;
+}
+
+// Search for javadooc classes and return an array with html elements
+function searchJavadocClasses(search) {
+    let searchResults = [];
+    let counter = 0;
+    for (let i = 0; i < typeSearchIndex.length; i++) {
+        let packageName = typeSearchIndex[i].p;
+        let className = typeSearchIndex[i].l;
+        // Skip internal methods
+        if (packageName.indexOf('.internal') !== -1) {
+            continue;
+        }
+        let url = javadocBaseUrl + packageName.replace(/\./g, '/') + '/' + className + '.html';
+        if (className.toLowerCase().indexOf(search.toLowerCase()) !== -1) {
+            let autocompleteElement = document.createElement('div');
+            autocompleteElement.innerHTML = '<a class="dropdown-item" href="' + url + '" onclick="location.href = \'' + url + '\'">' + highlightWordsNoCase(className, searchBox.value) + '</a>';
             searchResults.push(autocompleteElement);
             counter++;
         }
