@@ -28,6 +28,12 @@ img {
   direction: rtl
 }
 
+// Proper markdown quotes
+blockquote p {
+  padding: 5px 10px;
+  border-left: 5px solid $gray-300;
+  color: $gray-700;
+}
 /**
  * DROPDOWN IMPROVEMENTS
  */
