@@ -27,8 +27,8 @@ layout: default
                 {% endfor %}
             </div>
         </div>
-        <div class="col-lg-9 order-lg-first">
-            <h1 class="wiki-headline">{% if page.headline %}{{ page.headline }}{% else %}{{ page.title }}{% endif %}</h1>
+        <div class="col-lg-9 order-lg-first wiki-container">
+            <h1 id="wiki-headline">{% if page.headline %}{{ page.headline }}{% else %}{{ page.title }}{% endif %}</h1>
             {{ content }}
             <p class="text-center">
                 <br>
