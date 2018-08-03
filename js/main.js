@@ -188,3 +188,8 @@ searchBox.addEventListener('focusout', () => setTimeout(() => removeSuggestions(
 $('#search-box').on('change keydown paste input', function() {
     displaySuggestions();
 });
+
+// Anchors
+document.addEventListener("DOMContentLoaded", function(event) {
+    anchors.add();
+});
