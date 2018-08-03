@@ -10,7 +10,7 @@ keywords:
 
 ## How to create a bot and get its token
 
-**1.** Open https://discordapp.com/developers/applications/me and click on "New App".
+**1.** Open [https://discordapp.com/developers/applications/me](https://discordapp.com/developers/applications/me) and click on "New App".
 
 >![](https://i.imgur.com/tXv7YsR.png)
 
