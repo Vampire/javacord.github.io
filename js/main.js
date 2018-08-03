@@ -191,7 +191,7 @@ $('#search-box').on('change keydown paste input', function() {
 
 // Anchors
 document.addEventListener("DOMContentLoaded", function(event) {
-    anchors.add('h1');
-    anchors.add('h2');
-    anchors.add('h3');
+    anchors.add('h1:not(.no-anchor)');
+    anchors.add('h2:not(.no-anchor)');
+    anchors.add('h3:not(.no-anchor)');
 });
