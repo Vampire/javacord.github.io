@@ -20,27 +20,18 @@ Just click on the latest build and there go to the "Artifacts" tab to download t
 
 #### Gradle
 ```groovy
-repositories { maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' } }
-dependencies { compile 'org.javacord:javacord:3.0.0-SNAPSHOT' }
+repositories { mavenCentral() }
+dependencies { compile 'org.javacord:javacord:3.0.0' }
 ```
 
 #### Maven
 ```xml
-<repositories>
-    <repository>
-        <id>Sonatype Snapshots</id>
-        <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
-    </repository>
-</repositories>
-
-<dependencies>
-    <dependency>
-        <groupId>org.javacord</groupId>
-        <artifactId>javacord</artifactId>
-        <version>3.0.0-SNAPSHOT</version>
-        <type>pom</type>
-    </dependency>
-</dependencies>
+<dependency>
+    <groupId>org.javacord</groupId>
+    <artifactId>javacord</artifactId>
+    <version>3.0.0</version>
+    <type>pom</type>
+</dependency>
 ```
 
 ### Optional Logger Dependency

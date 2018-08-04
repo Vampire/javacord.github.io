@@ -50,18 +50,11 @@ position: 3
     <artifactId>myfirstbot</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    <repositories>
-        <repository>
-            <id>Sonatype Snapshots</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
-        </repository>
-    </repositories>
-
     <dependencies>
         <dependency>
             <groupId>org.javacord</groupId>
             <artifactId>javacord</artifactId>
-            <version>3.0.0-SNAPSHOT</version>
+            <version>3.0.0</version>
             <type>pom</type>
         </dependency>
     </dependencies>
