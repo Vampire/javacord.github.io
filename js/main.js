@@ -1,11 +1,11 @@
 // TODO get base url dynamically
-let javadocBaseUrl = 'https://docs.javacord.org/api/build/';
+let javadocBaseUrl = 'https://docs.javacord.org/api/v/';
 let memberSearchIndex = [];
 let typeSearchIndex = [];
 
 // Get the latest version
-$.get('https://docs.javacord.org/rest/latest-version/build', function (data) {
-    javadocBaseUrl += data.build_id + '/';
+$.get('https://docs.javacord.org/rest/latest-version/release', function (data) {
+    javadocBaseUrl += data.version + '/';
 
     // Get JavaDoc methods
     $.getScript(javadocBaseUrl + 'member-search-index.js', function () {
