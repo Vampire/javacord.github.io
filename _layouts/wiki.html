@@ -30,6 +30,12 @@ layout: default
         <div class="col-lg-9 order-lg-first wiki-container">
             <h1 id="wiki-headline">{% if page.headline %}{{ page.headline }}{% else %}{{ page.title }}{% endif %}</h1>
             {{ content }}
+
+            <hr>
+            <div id="wiki-footer">
+                Feel free to join Javacord's Discord server if you have any questions: <a href="https://discord.gg/0qJ2jjyneLEgG7y3">Invite Link</a>
+            </div>
+
             <p class="text-center">
                 <br>
                 <a class="btn btn-primary" target="_blank" href="https://github.com/Javacord/javacord.github.io/blob/master/{{ page.path }}" role="button">
