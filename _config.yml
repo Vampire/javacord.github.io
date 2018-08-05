@@ -21,13 +21,6 @@ defaults:
       layout: wiki
       sectionid: wiki
       category: wiki
-  - scope:
-      path: _changelog
-      type: changelog
-    values:
-      layout: changelog
-      sectionid: changelog
-      category: changelog
 
 collections:
   wiki:
@@ -35,11 +28,6 @@ collections:
     output: true
     values:
       layout: wiki
-  changelog:
-    permalink: /:collection/:path/
-    output: true
-    values:
-      layout: changelog
 
 # Exclude from processing.
 exclude:

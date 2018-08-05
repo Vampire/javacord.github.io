@@ -3,6 +3,33 @@ let javadocBaseUrl = 'https://docs.javacord.org/api/v/';
 let memberSearchIndex = [];
 let typeSearchIndex = [];
 
+// Get all release versions
+$.get('https://docs.javacord.org/rest/versions', function (versions) {
+    let dropdown = document.getElementById('changelog-dropdown-content');
+
+    for (let i = 0; i < versions.length; i++) {
+        if (i >= 10) {
+            break;
+        }
+
+        if (i === 1) {
+            let dropdownDivider = document.createElement('div');
+            dropdownDivider.setAttribute('class', 'dropdown-divider');
+            dropdown.appendChild(dropdownDivider);
+        }
+
+        let dropdownElement = document.createElement('a');
+        dropdownElement.setAttribute('class', 'dropdown-item');
+        dropdownElement.setAttribute('href', 'https://github.com/Javacord/Javacord/releases/tag/v' + versions[i]);
+        dropdownElement.innerText = versions[i];
+        if (i === 0) {
+            dropdownElement.innerText += ' (latest)';
+        }
+        dropdown.appendChild(dropdownElement);
+    }
+
+}, 'json');
+
 // Get the latest version
 $.get('https://docs.javacord.org/rest/latest-version/release', function (data) {
     javadocBaseUrl += data.version + '/';
