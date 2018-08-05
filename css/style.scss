@@ -28,11 +28,17 @@
   }
 }
 
+// The highlight on the front page
+.front-page-highlights {
+  color: $primary;
+}
+
 // Images should never cause horizontal scrolling
 img {
   max-width: 100%;
 }
 
+// The jumborton on the front-page
 .home-jumbotron {
   background: url("../img/bg.jpg") no-repeat 50% 0;
   background-size: cover;
