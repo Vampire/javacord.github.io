@@ -50,6 +50,9 @@ $.get('https://docs.javacord.org/rest/latest-version/release', function (data) {
         });
     });
 
+    // Replace ${latest-version} with the latest version
+    replaceInDOM(document.body, /\${latest-version}/g, data.version);
+
 }, 'json');
 
 // Get the wiki data
@@ -222,3 +225,15 @@ document.addEventListener("DOMContentLoaded", function(event) {
     anchors.add('h2:not(.no-anchor)');
     anchors.add('h3:not(.no-anchor)');
 });
+
+// Replace placeholders
+function replaceInDOM(node, pattern, replacement) {
+    if (node.nodeType === 3) {
+        node.data = node.data.replace(pattern, replacement);
+    }
+    if (node.nodeType === 1 && node.nodeName !== "SCRIPT") {
+        for (var i = 0; i < node.childNodes.length; i++) {
+            replaceInDOM(node.childNodes[i], pattern, replacement);
+        }
+    }
+}

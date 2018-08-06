@@ -21,7 +21,7 @@ Just click on the latest build and there go to the "Artifacts" tab to download t
 #### Gradle
 ```groovy
 repositories { mavenCentral() }
-dependencies { compile 'org.javacord:javacord:3.0.0' }
+dependencies { compile 'org.javacord:javacord:${latest-version}' }
 ```
 
 #### Maven
@@ -29,7 +29,7 @@ dependencies { compile 'org.javacord:javacord:3.0.0' }
 <dependency>
     <groupId>org.javacord</groupId>
     <artifactId>javacord</artifactId>
-    <version>3.0.0</version>
+    <version>${latest-version}</version>
     <type>pom</type>
 </dependency>
 ```

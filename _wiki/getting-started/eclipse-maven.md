@@ -54,7 +54,7 @@ position: 3
         <dependency>
             <groupId>org.javacord</groupId>
             <artifactId>javacord</artifactId>
-            <version>3.0.0</version>
+            <version>${latest-version}</version>
             <type>pom</type>
         </dependency>
     </dependencies>
