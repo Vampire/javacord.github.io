@@ -10,6 +10,9 @@ markdown: kramdown
 
 highlighter: rouge
 
+plugins:
+  - jekyll-redirect-from
+
 sass:
   sass_dir: _sass
 

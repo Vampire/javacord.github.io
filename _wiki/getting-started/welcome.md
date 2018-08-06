@@ -1,6 +1,7 @@
 ---
 title: Welcome
 position: 1
+redirect_from: "/wiki/"
 ---
 ![](/img/javacord3_banner.png)
 
