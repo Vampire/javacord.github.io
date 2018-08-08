@@ -50,8 +50,9 @@ Take a look at the [Logger Configuration](/wiki/basic-tutorials/logger-configura
 ## IDE Setup
 
 If you never used Gradle or Maven before you should take a look at the setup tutorial:
-* **[IntelliJ & Maven Setup](/wiki/getting-started/intellij-maven)**
-* **[Eclipse & Maven Setup](/wiki/getting-started/eclipse-maven)**
+* **[IntelliJ & Gradle](/wiki/getting-started/intellij-gradle)** _(recommended)_
+* **[IntelliJ & Maven](/wiki/getting-started/intellij-maven)**
+* **[Eclipse & Maven](/wiki/getting-started/eclipse-maven)**
 
 ## Examples
 
