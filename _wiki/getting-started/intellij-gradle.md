@@ -27,7 +27,7 @@ position: 2
 **8.** Click `Next`
 >![](/img/tutorials/setup-intellij-gradle/new-project.png)
 
-**9.** Check `Enable auto-import`
+**9.** Check `Use auto-import`
 
 **10.** Click `Next`
 >![](/img/tutorials/setup-intellij-gradle/new-project-2.png)
@@ -54,7 +54,7 @@ repositories {
 }
 
 dependencies {
-    compile 'org.javacord:javacord:${latest-version}'
+    implementation 'org.javacord:javacord:${latest-version}'
 }
 ```
 
