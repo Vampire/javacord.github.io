@@ -11,11 +11,9 @@ Welcome to the Javacord wiki! You can find all important topics on the right sid
 
 ## Download / Installation
 
-The recommended way to get Javacord is to use a build manager like Gradle or Maven.  
-If you are not familiar with build managers, you can follow the Setup Guide 
-or download it directly from
-[TeamCity](https://ci.javacord.org/viewType.html?buildTypeId=Javacord_PublishSnapshots&branch_Javacord=v_3&tab=buildTypeStatusDiv&state=successful).
-Just click on the latest build and, there, go to the "Artifacts" tab to download the files.
+The recommended way to get Javacord is to use a build manager, like Gradle or Maven.  
+If you are not familiar with build managers, you can follow on of the setup guides
+or download Javacord directly from [GitHub](https://github.com/Javacord/Javacord/releases/latest).
 
 ### Javacord Dependency
 
@@ -45,7 +43,7 @@ For example, Log4j Core in Gradle
 ```groovy
 dependencies { runtimeOnly 'org.apache.logging.log4j:log4j-core:2.11.0' }
 ```
-Take a look at the [Logger Configuration](/wiki/basic-tutorials/logger-configuration/) article for further information.
+Take a look at the [Logger Configuration](/wiki/basic-tutorials/logger-configuration/) wiki article for further information.
 
 ## IDE Setup
 
@@ -53,6 +51,11 @@ If you've never used Gradle or Maven before, you should take a look at the setup
 * **[IntelliJ & Gradle](/wiki/getting-started/intellij-gradle)** _(recommended)_
 * **[IntelliJ & Maven](/wiki/getting-started/intellij-maven)**
 * **[Eclipse & Maven](/wiki/getting-started/eclipse-maven)**
+
+## Support
+
+Javacord's Discord community is an excellent resource if you have questions about the library.  
+* **[The Javacord Server](https://discord.gg/0qJ2jjyneLEgG7y3)**
 
 ## Examples
 
