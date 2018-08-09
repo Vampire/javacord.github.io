@@ -2,49 +2,74 @@
 title: Home
 layout: default
 ---
-<div class="jumbotron home-jumbotron">
+<div class="front-page-highlight" style="text-align: center">
     <div class="container">
-        <h1 class="display-4 no-anchor">Hello!</h1>
-        <p class="lead">Javacord is an easy to use multithreaded library for creating Discord bots in Java.</p>
-        <a class="btn btn-primary btn-lg" href="/wiki" role="button">Learn more</a>
+        <img src="https://camo.githubusercontent.com/cbc4e7783b8b7476f016a6865d35dfa538e6d45b/68747470733a2f2f6a617661636f72642e6f72672f696d672f6a617661636f7264335f62616e6e65722e706e67">
     </div>
 </div>
 
 <div class="container front-page-highlights">
+    <section>
+        <h1 class="no-anchor">Why Javacord?</h1>
+        <div>
+            <hr>
+            <div class="row">
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <h1 class="text-center no-anchor faa-parent animated-hover"><i class="fas fa-rocket faa-passing" aria-hidden="true"></i></h1>
+                    <h3 class="text-center no-anchor">It's fast</h3>
+                </div>
+                <div class="col-lg-10 col-md-9 col-sm-8">
+                    Unlike most other libraries, Javacord is 100% multithreaded. Not only simple actions like sending messages are
+                    executed asynchronously, but also logging in, event listening, ...
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <h1 class="text-center no-anchor"><i class="fa fa-thumbs-up" aria-hidden="true"></i></h1>
+                    <h3 class="text-center no-anchor">It's simple</h3>
+                </div>
+                <div class="col-lg-10 col-md-9 col-sm-8">
+                    Javacord is easy to use, both for beginners as well as experienced Java developers. We don't force you to learn
+                    complex frameworks or introduce unnecessary abstraction or unintuitive concepts. Only familiar default
+                    Java classes like <code class="highlighter-rouge">CompletableFuture</code>s or <code class="highlighter-rouge">Optional</code>s
+                    are used.
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <h1 class="text-center no-anchor"><i class="fa fa-book" aria-hidden="true"></i></h1>
+                    <h3 class="text-center no-anchor">Rich Documentation</h3>
+                </div>
+                <div class="col-lg-10 col-md-9 col-sm-8">
+                    The best library is worth nothing, if you don't know how to use it. To help you getting started, there are plenty of
+                    tutorials in our <a href="/wiki">wiki</a> which help you getting started.
+                </div>
+            </div>
+            <hr>
+            <div class="col-lg-12 row">
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <h1 class="text-center no-anchor"><i class="fa fa-comments" aria-hidden="true"></i></h1>
+                    <h3 class="text-center no-anchor">Awesome community</h3>
+                </div>
+                <div class="col-lg-10 col-md-9 col-sm-8">
+                    There's a large community of other bot developers in our <a href="https://discordapp.com/invite/0qJ2jjyneLEgG7y3" target="_blank">Discord Server</a>.
+                    You can ask questions there, chat with other developers and keep track about Javacord's development.
+                </div>
+            </div>
+            <hr>
+        </div>
+    </section>
 
     <br>
 
-    <div class="row">
-        <div class="col-sm-4">
-            <h1 class="text-center no-anchor"><i class="fa fa-thumbs-up" aria-hidden="true"></i></h1>
-            <h3 class="text-center no-anchor">Easy to Use</h3>
-            <p class="text-center">
-                Javacord has been designed to be easy to use both by experienced developers and beginners.
-            </p>
-        </div>
-        <div class="col-sm-4">
-            <h1 class="text-center no-anchor"><i class="fa fa-cogs" aria-hidden="true"></i></h1>
-            <h3 class="text-center no-anchor">Powerful API</h3>
-            <p class="text-center">
-                Focused both on usability and performance, Javacord is the perfect choice for every Discord bot.
-            </p>
-        </div>
-        <div class="col-sm-4">
-            <h1 class="text-center no-anchor"><i class="fa fa-book" aria-hidden="true"></i></h1>
-            <h3 class="text-center no-anchor">Rich Documentation</h3>
-            <p class="text-center">
-                The wiki contains detail information about everything you have to know to get started.
-            </p>
-        </div>
-    </div>
-</div>
+    <section>
+        <h1 class="no-anchor">Here are some examples!</h1>
 
-
-
-<div class="container">
-    <hr>
-    <br>
-    <h1 class="no-anchor">Example Code</h1>
+        <h3 class="no-anchor">Logging in</h3>
+        <p>This an easy starter template. It logs the bot in and adds a listener, that answers <code class="highlighter-rouge">!ping</code>
+            commands with <code class="highlighter-rouge">Pong!</code>. It also prints the invite url for the bot.</p>
 {% highlight java %}
 public class MyFirstBot {
 
@@ -67,6 +92,31 @@ public class MyFirstBot {
 
 }
 {% endhighlight %}
+
+        <h3 class="no-anchor">Creating a text channel</h3>
+        <p>The following example creates a new text channel in a server with some pre-set permissions for
+            the <code class="highlighter-rouge">@everyone</code> role</p>
+{% highlight java %}
+Server server = ...;
+new ServerTextChannelBuilder(server)
+        .setName("my-new-channel")
+        .setTopic("This channel was created by a bot!")
+        .addPermissionOverwrite(server.getEveryoneRole(), new PermissionsBuilder()
+                .setAllowed(PermissionType.READ_MESSAGES, PermissionType.SEND_MESSAGES, PermissionType.ADD_REACTIONS)
+                .setDenied(PermissionType.ATTACH_FILE, PermissionType.READ_MESSAGE_HISTORY)
+                .build())
+        .create();
+{% endhighlight %}
+
+        <h3 class="no-anchor">Deleting the last 100 messages in a channel</h3>
+        <p>This code first fetches the last 100 messages in a given channel and then deletes them.</p>
+{% highlight java %}
+channel.getMessages(100).thenAcceptAsync(MessageSet::deleteAll);
+{% endhighlight %}
+
+
+    </section>
+
 </div>
 
 <br>
