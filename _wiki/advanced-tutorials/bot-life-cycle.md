@@ -30,16 +30,16 @@ This can have various reasons, for example:
 The bot will periodically try ro resume/reconnect to the websocket. It will start with a small frequency and increase it
 with every failed reconnect attempt. You can modify this reconnect delay with the `DiscordApi#setReconnectDelay(...)` method.
 The following example code would increase the delay linearly.
-The 1. attempt would be delayed for `2` seconds, the 2. attempt for `4` seconds, the 3. attempts for `6` seconds, ...
+The 1st attempt would be delayed for `2` seconds, the 2nd attempt for `4` seconds, the 3rd attempts for `6` seconds, ...
 ```java
 api.setReconnectDelay(attempt -> attempt * 2);
 ```
 
 > **Important:** Bots can only reconnect 1000 times in a 24-hour period (every ~90 seconds). This limit is global and across all shards.
  Upon hitting this limit, all active sessions for the bot will be terminated, the bot's token will be reset, and
- you will receive an email notification. This is the reason, Javacord increases the reconnect delay with every attempt.
+ you will receive an email notification. This is the reason Javacord increases the reconnect delay with every attempt.
 
-By default the following formula is used to calculate the reconnect delay:  
+By default, the following formula is used to calculate the reconnect delay:  
 ![](/img/tutorials/bot-life-cycle/reconnect-delay.png)  
 For shard `0`, the delays will look like this:
 
@@ -66,7 +66,7 @@ For shard `0`, the delays will look like this:
 ### Resuming
 
 Resuming is only possible for a short time after being disconnected. If the bot can successfully resume the connection,
-you will not miss any events. Your bot will receive all events, you missed while being disconnected. The cache gets updated
+you will not miss any events. Your bot will receive all events you missed while being disconnected. The cache gets updated
 accordingly.
 
 ### Reconnecting
@@ -76,12 +76,12 @@ If your bot reconnects (not resumes!), the whole cache gets wiped and you will n
 **What does this mean?**  
 * References to entities (e.g. a `Server`, `User`, `Channel`, ...) will be outdated. This is why you should never store
   entities, but the id instead. See [Entity Cache](http://localhost:4000/wiki/advanced-tutorials/entity-cache/#how-long-are-cached-entities-valid).
-* You missed events. There's no way to receive the missed events.
-* Listeners attached to entities are **not** affected, because they are bound to the entity's id, not the object itself.
+* You will miss events. There's no way to receive the missed events.
+* Listeners attached to entities will **not** be affected, because they are bound to the entity's id, not the object itself.
 
 ## How to handle disconnects
 
-For most bots, there's nothing you have to do. All registered listeners are reconnect-resistant which means if your bot
+For most bots, there's nothing you have to do. All registered listeners are reconnect-resistant, which means if your bot
 is only reacting to events, it will work fine after a restart. For example, the following code will not be affected by a 
 reconnect (besides maybe some missed `!ping` messages):
 ```java
