@@ -61,15 +61,19 @@ layout: default
             <hr>
         </div>
     </section>
+</div>
 
+
+<div class="font-page-code-examples">
     <br>
+    <div class="container">
 
-    <section>
-        <h1 class="no-anchor">Here are some examples!</h1>
+        <section>
+            <h1 class="no-anchor">Here are some examples!</h1>
 
-        <h3 class="no-anchor">Logging in</h3>
-        <p>This an easy starter template. It logs the bot in and adds a listener, that answers <code class="highlighter-rouge">!ping</code>
-            commands with <code class="highlighter-rouge">Pong!</code>. It also prints the invite url for the bot.</p>
+            <h3 class="no-anchor">Logging in</h3>
+            <p>This an easy starter template. It logs the bot in and adds a listener, that answers <code class="highlighter-rouge">!ping</code>
+                commands with <code class="highlighter-rouge">Pong!</code>. It also prints the invite url for the bot.</p>
 {% highlight java %}
 public class MyFirstBot {
 
@@ -93,9 +97,9 @@ public class MyFirstBot {
 }
 {% endhighlight %}
 
-        <h3 class="no-anchor">Creating a text channel</h3>
-        <p>The following example creates a new text channel in a server with some pre-set permissions for
-            the <code class="highlighter-rouge">@everyone</code> role</p>
+            <h3 class="no-anchor">Creating a text channel</h3>
+            <p>The following example creates a new text channel in a server with some pre-set permissions for
+                the <code class="highlighter-rouge">@everyone</code> role</p>
 {% highlight java %}
 Server server = ...;
 new ServerTextChannelBuilder(server)
@@ -108,14 +112,16 @@ new ServerTextChannelBuilder(server)
         .create();
 {% endhighlight %}
 
-        <h3 class="no-anchor">Deleting the last 100 messages in a channel</h3>
-        <p>This code first fetches the last 100 messages in a given channel and then deletes them.</p>
+            <h3 class="no-anchor">Deleting the last 100 messages in a channel</h3>
+            <p>This code first fetches the last 100 messages in a given channel and then deletes them.</p>
 {% highlight java %}
 channel.getMessages(100).thenAcceptAsync(MessageSet::deleteAll);
 {% endhighlight %}
 
 
-    </section>
+        </section>
+
+    </div>
 
 </div>
 
