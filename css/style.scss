@@ -54,17 +54,20 @@ img {
 
 // The headline on the front-page
 .front-page-highlight {
-  background-image: url("/img/patterns/dust_scratches.png");
+  background-image: url("/img/patterns/connectwork.png");
   background-repeat: repeat;
+
   border-radius: 0;
   padding-top: 50px;
   padding-bottom: 50px;
   margin-bottom: 20px;
-  @media screen and (max-width: 600px) {
-    padding-top: 30px;
-    padding-bottom: 30px;
+
+  @include media-breakpoint-down(sm) {
+    padding-top: 45px;
+    padding-bottom: 45px;
     margin-bottom: 10px;
   }
+
   img {
     max-width: 95%;
     @media screen and (max-width: 600px) {
@@ -150,23 +153,46 @@ pre.highlight {
  * STICKY FOOTER
  */
 .page-footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 40px;
-  line-height: 40px;
-  background-color: #eeeeee;
-  color: $gray-800;
-  text-align: center;
+  margin-top: auto;
+  padding: 40px 160px 48px;
+  font-weight: 400;
+  position: relative;
+
+  font-size: 12px;
+
+  border-top: 5px solid $blurple;
+
+  background-color: $not-quite-black;
+  color: hsla(0,0%,100%,.6);
+
+  a {
+    color: hsla(0,0%,100%,.6);
+  }
+
+  a:hover {
+    color: $white;
+  }
+
+  .footer-headline {
+    font-size: 14px;
+    color: $white;
+    margin-bottom: 13px;
+    margin-top: 20px;
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding: 40px 0 48px 20px;
+  }
 }
+
 html {
   position: relative;
-  min-height: 100%;
+  height: 100%;
 }
+
 body {
-  margin-bottom: 40px;
-}
-.page-footer a {
-  color: $gray-800;
-  text-align: center;
+  display: flex;
+  flex-flow: column;
+  min-height: 100%;
+  background-image: url("/img/patterns/crossword.png");
 }
