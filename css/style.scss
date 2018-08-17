@@ -33,12 +33,6 @@
   }
 }
 
-#wiki-footer {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
 // The highlight on the front page
 .front-page-highlights {
   color: $gray-700;
@@ -147,6 +141,13 @@ pre.highlight {
 .wiki-container h2 {
   padding-bottom: 5px;
   border-bottom: 0.5px solid $gray-400;
+}
+
+#wiki-footer {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: white;
 }
 
 /*
