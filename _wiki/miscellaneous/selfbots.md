@@ -32,9 +32,11 @@ If Discord's going to ask us (or all libraries in general) to remove this featur
 ### Getting the token
 
 If you are willing to accept the risks involved in using a selfbot, you first need to get the token of your account.
-You can get it by pressing `Ctrl` + `Shift` + `i` and navigating to `Application` -> `Local Storage` -> `token` (see image).
+You can get it by pressing `Ctrl` + `Shift` + `i` and navigating to `Network`.
+Filter the request type to only display `XHR` requests and search for a request that contains an `authorization` request header.
+If you don't see any requests, just press `Ctrl` + `r`. In this example, the token would be `mfa.h[...]c5eu`.
 
-![](https://i.imgur.com/684oP4G.png)
+![](/img/tutorials/selfbots/get-client-token.png)
 
 ### Using the token
 
