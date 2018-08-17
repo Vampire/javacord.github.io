@@ -48,18 +48,17 @@ img {
 
 // The headline on the front-page
 .front-page-highlight {
-  background-image: url("/img/patterns/connectwork.png");
-  background-repeat: repeat;
+  background: url("/img/patterns/connectwork.png") repeat;
 
   border-radius: 0;
   padding-top: 50px;
   padding-bottom: 50px;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
 
   @include media-breakpoint-down(sm) {
     padding-top: 45px;
     padding-bottom: 45px;
-    margin-bottom: 10px;
+    margin-bottom: 40px;
   }
 
   img {
