@@ -53,6 +53,10 @@ $.get('https://docs.javacord.org/rest/latest-version/release', function (data) {
     // Replace ${latest-version} with the latest version
     replaceInDOM(document.body, /\${latest-version}/g, data.version);
 
+    // Replace ${latest-snapshot-version} with the latest version
+    let snapshotVersion = `${data.version.split('\.')[0]}.${data.version.split('\.')[1]}.${parseInt(data.version.split('\.')[2]) + 1}-SNAPSHOT`;
+    replaceInDOM(document.body, /\${latest-snapshot-version}/g, snapshotVersion);
+
 }, 'json');
 
 // Get the wiki data

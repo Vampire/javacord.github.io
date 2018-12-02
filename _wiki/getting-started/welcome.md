@@ -23,6 +23,29 @@ repositories { mavenCentral() }
 dependencies { implementation 'org.javacord:javacord:${latest-version}' }
 ```
 
+<p>
+  <button class="btn btn-light btn-sm btn-block" type="button" data-toggle="collapse" data-target="#collapseGradleSnapshot" aria-expanded="false" aria-controls="collapseGradleSnapshot">
+    Show Gradle snapshot dependency
+  </button>
+</p>
+<div class="collapse" id="collapseGradleSnapshot">
+<p>
+Snapshots are automatically deployed from the <a href="https://github.com/Javacord/Javacord/tree/development" target="_blank"><code class="highlighter-rouge">development</code></a> branch.
+</p>
+{% highlight groovy %}
+repositories { 
+  maven {
+    url "https://oss.sonatype.org/content/repositories/snapshots/"
+  }
+}
+dependencies { 
+  implementation 'org.javacord:javacord:${latest-snapshot-version}' 
+}
+{% endhighlight %}
+
+</div>
+
+
 #### Maven
 ```xml
 <dependency>
@@ -32,6 +55,32 @@ dependencies { implementation 'org.javacord:javacord:${latest-version}' }
     <type>pom</type>
 </dependency>
 ```
+
+<p>
+  <button class="btn btn-light btn-sm btn-block" type="button" data-toggle="collapse" data-target="#collapseMavenSnapshot" aria-expanded="false" aria-controls="collapseMavenSnapshot">
+    Show Maven snapshot dependency
+  </button>
+</p>
+<div class="collapse" id="collapseMavenSnapshot">
+<p>
+Snapshots are automatically deployed from the <a href="https://github.com/Javacord/Javacord/tree/development" target="_blank"><code class="highlighter-rouge">development</code></a> branch.
+</p>
+{% highlight xml %}
+<repository>
+    <id>snapshots-repo</id>
+    <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+</repository>
+{% endhighlight %}
+{% highlight xml %}
+<dependency>
+    <groupId>org.javacord</groupId>
+    <artifactId>javacord</artifactId>
+    <version>${latest-snapshot-version}</version>
+    <type>pom</type>
+</dependency>
+{% endhighlight %}
+
+</div>
 
 ### Optional Logger Dependency
 
