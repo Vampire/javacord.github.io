@@ -2,7 +2,6 @@
 title: Creating Channels, Invites, etc.
 position: 1
 keywords:
-- builder
 - creating entities
 - create entities
 - entity creation

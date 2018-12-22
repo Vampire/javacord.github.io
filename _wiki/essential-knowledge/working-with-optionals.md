@@ -2,11 +2,10 @@
 title: Working with Optionals
 position: 3
 keywords:
-- CompletableFuture
-- exceptionally
-- ExceptionLogger
-- join
-- thenAcceptAsync
+- null
+- ifPresent
+- isPresent
+- orElse
 ---
 
 > This tutorials assumes you are familiar with lambda expressions. Take a look at the [Lambda Introduction](/wiki/essential-knowledge/lambda-introduction) first, if you are not!
