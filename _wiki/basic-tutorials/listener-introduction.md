@@ -4,7 +4,7 @@ position: 3
 keywords:
 - creating listeners
 - listener creation
-- LstenerManager
+- ListenerManager
 - removeListener
 - remove listener
 ---
